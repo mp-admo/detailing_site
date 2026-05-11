@@ -5,20 +5,20 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
 
-	<header>
-		<!--Навигация-->
-		<nav>
-	
-			<a href="#">
+	<header class="header">
+		
+		<nav class="header__nav">
+
+			<!--Логотип-->
+			<a href="#" class="header__logo">
 				<img
-				src="/logo_01_nova.svg"
-				alt="лого header"
-				width="55"
-				height="38"
+				src="/logo_01_nova.svg" alt="Детейлинг студия Nova"
+				width="55" height="38"
 				/>
 			</a>
 
-			<ul>
+            <!--Навигация-->
+			<ul class="header__list">
 				<li>
 					<a href="#advantages">Преимущества</a>
 				</li>
@@ -32,38 +32,66 @@ import Layout from "../layouts/Layout.astro";
 				</li>
 			</ul>
 		
-
-		
-			<div>
-				<img
-				src="/pin.svg"
-				alt="Иконка локации"
-				/>
+            <!-- Адрес -->
+			<div class="header__address" role="contentinfo">
+				<img src="/pin.svg" alt="" />
 
 				<span>
-					г. Новороссийск
+					г.Новороссийск
 				</span>
 			</div>
 
-			<a href="tel:+79184641250" class="phone-button">
+		    <!-- Телефон -->
+			<a href="tel:+79184641250" class="phone__button">
 				+7 (918) 464-12-50
 			</a>
 	
 		</nav>
 
-		
-		
 	</header>
-			
-	<h1>Нова</h1>
 
-	<h2>Детейлинг Услуги</h2>
-			
-	<img
-	  src="/photo_01.jpeg"
-	  alt="банер"
-	/>
 
-	<p>Самые крутые услуги во всём Новороссе</p>
+	<main>
+
+		<!--Секция Hero-->
+		<section class="hero">
+
+			<div class="container">
+				
+				<div class="hero__content">
+
+					<h1>
+						<span>Детейлинг услуги</span>
+						<span>в Новороссийске</span>
+					</h1>
+					
+					<p>
+						Удаление вмятин без покраски, полировка кузова, ремонт фар и оклейка авто. Работаем аккуратно, сохраняем заводское покрытие и доводим результат до идеала.
+					</p>
+					
+					<div class="hero__actions">
+
+						<a href="#contacts" class="hero__button">
+							Записаться на осмотр
+						</a>
+						
+						<p class="hero__note">
+							<img src="/star.svg" alt="" class="hero__icon" />
+							
+							<span>
+							Бесплатная консультация и оценка
+						    </span>
+						</p>
+						
+					</div>
+
+				</div>
+
+			</div>
+		
+		</section>
+
+	</main>
+
 
 </Layout>
