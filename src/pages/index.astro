@@ -12,8 +12,9 @@ import Layout from "../layouts/Layout.astro";
 			<!--Логотип-->
 			<a href="#" class="header__logo">
 				<img
-				src="/logo_01_nova.svg" alt="Детейлинг студия Nova"
-				width="55" height="38"
+				src="/logo_01_nova.svg"
+				alt="Логотип Nova Detail"
+				class="header__logo-image"
 				/>
 			</a>
 
@@ -33,10 +34,10 @@ import Layout from "../layouts/Layout.astro";
 			</ul>
 		
             <!-- Адрес -->
-			<div class="header__address" role="contentinfo">
+			<div class="header__address">
 				<img src="/pin.svg" alt="" />
 
-				<span>
+				<span class="header__address-text">
 					г.Новороссийск
 				</span>
 			</div>
@@ -926,12 +927,165 @@ import Layout from "../layouts/Layout.astro";
 		
 		</section>
 
-								
-	
-	
-	
-	
 	</main>
+
+    <!-- Футер -->
+	<footer class="footer">
+
+		<div class="container">
+
+			<!-- Верхняя часть -->
+			<div class="footer__top">
+
+                <!-- Футер информация -->
+				<img
+				  src="/logo_02_nova.svg"
+				  alt="Логотип Nova Detail"
+				  class="footer__logo"
+				/>
+
+				<div class="footer__info">
+
+					<h5 class="footer__title">
+						Информация
+					</h5>
+
+					<p class="footer__text">
+						Детейлинг услуги в Новороссийске. Удаление вмятин, полировка кузова, ремонт фар, оклейка полиуретаном, химчистка салона и другие услуги по уходу за автомобилем. Работаем с любыми автомобилями и доводим результат до идеала.
+					</p>
+
+					<a href="#contacts" class="footer__button">
+						Записаться на осмотр
+					</a>
+
+				</div>
+
+				<!-- Футер контакты -->
+				<div class="footer__contacts">
+
+					<h5 class="footer__title">
+						Контакты
+					</h5>
+
+					<a href="tel:+79184641250" class="footer__value footer__value--accent">
+						+7 (918) 464-12-50
+					</a>
+
+					<a href="#" class="footer__value">
+						@Nova_Detail_NVR
+					</a>
+
+					<a href="#" class="footer__value">
+						novadetail@yandex.ru
+					</a>
+
+					<p class="footer__value">
+						Ежедневно с 9:00 до 18:00
+					</p>
+
+					<p class="footer__value">
+						Новороссийск, Наб. Адмирала Серебрякова, 79Г
+					</p>
+				
+				</div>
+
+				<!-- Футер сервисы -->
+				<div class="footer__services">
+
+					<h5 class="footer__title">
+						Услуги
+					</h5>
+					
+					<ul class="footer__services-list">
+
+						<li class="footer__services-item">
+
+							<a href="#services" class="footer__value">
+							Удаление вмятин
+					    	</a>
+
+						</li>
+
+						<li class="footer__services-item">
+						
+							<a href="#services" class="footer__value">
+								Ремонт фар
+							</a>
+
+						</li>
+
+						<li class="footer__services-item">
+						
+							<a href="#services" class="footer__value">
+								Полировка кузова
+							</a>
+
+						</li>
+
+						<li class="footer__services-item">
+
+							<a href="#services" class="footer__value">
+								Химчистка
+							</a>
+
+						</li>
+
+						<li class="footer__services-item">
+
+							<a href="#services" class="footer__value">
+								Оклейка полиуретаном
+							</a>
+
+						</li>
+
+						<li class="footer__services-item">
+
+							<a href="#services" class="footer__value">
+								Шумоизоляция
+							</a>
+
+						</li>
+
+						<li class="footer__services-item">
+
+							<a href="#services" class="footer__value">
+								Тонировка
+							</a>
+
+						</li>
+
+					</ul>
+				
+				</div>
+
+			</div>
+
+			<!-- Нижняя часть -->
+			<div class="footer__bottom">
+
+				<p class="footer__copyright">
+					© NOVA DETAIL, 2026. Все права защищены.
+				</p>
+
+				<div class="footer__developer">
+
+					<img
+						src="/dojo_star_icon.svg"
+						alt=""
+						class="footer__developer-icon"
+					/>
+
+					<p class="footer__developer-text">
+						Дизайн и разработка - dojotal
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</footer>
 
 
 </Layout>
