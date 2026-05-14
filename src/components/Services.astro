@@ -7,6 +7,8 @@
 
 			<div class="container">
 
+				<div class="services__header">
+
 				<h2 class="services__title">
 					Наши услуги детейлинга
 				</h2>
@@ -15,11 +17,13 @@
 					Удаление вмятин, полировка кузова, ремонт фар, оклейка и химчистка. Работаем с любыми автомобилями и доводим результат до идеала.
 				</p>
 
+				</div>
+
 				<!-- Карточки Сервисов -->
 				 <ul class="services__grid">
 					
 					<!-- Карточка Удаление Вмятин -->
-					 <li class="services__card">
+					 <li class="services__card services__card--large">
 
 						<a href="#contacts" class="services__button">
 							Записаться
@@ -41,8 +45,8 @@
 
 					 </li>
 
-					 <!-- Карточка Ремонт фар -->
-					 <li class="services__card">
+					 <!-- Карточка Ремонт Фар -->
+					 <li class="services__card services__card--lights">
 
 						<a href="#contacts" class="services__button">
 							Записаться
@@ -53,7 +57,7 @@
 							<img src="/star_services.svg" alt"" class="services__icon">
 
 							<h3 class="services__card-title">
-								Ремонт фар
+								Ремонт Фар
 							</h3>
 
 							<p class="services__card-text">
@@ -65,7 +69,7 @@
 					 </li>
 
 					 <!-- Карточка Полировка Кузова -->
-					 <li class="services__card">
+					 <li class="services__card services__card--polish">
 
 						<a href="#contacts" class="services__button">
 							Записаться
@@ -88,7 +92,7 @@
 					 </li>
 
 					 <!-- Карточка Химчистка -->
-					 <li class="services__card">
+					 <li class="services__card services__card--clean">
 
 						<a href="#contacts" class="services__button">
 							Записаться
@@ -111,7 +115,7 @@
 					 </li>
 
 					 <!-- Оклейка Полиуретаном -->
-					 <li class="services__card">
+					 <li class="services__card services__card--armor">
 
 						<a href="#contacts" class="services__button">
 							Записаться
@@ -135,7 +139,7 @@
 
 						
 					 <!-- Шумоизоляция -->
-					 <li class="services__card">
+					 <li class="services__card services__card--sound">
 
 						<a href="#contacts" class="services__button">
 							Записаться
@@ -158,7 +162,7 @@
 					 </li>
 
 					  <!-- Тонировка -->
-					 <li class="services__card">
+					 <li class="services__card services__card--tint">
 
 						<a href="#contacts" class="services__button">
 							Записаться
@@ -185,3 +189,146 @@
 			</div>
 		
 		</section>
+
+
+		<style>
+
+			.services {
+				margin-bottom: 12rem;
+				scroll-margin-top: 10rem;
+			}
+
+			.container {
+				max-width: 124rem;
+				width: 100%;
+				padding: 0 2rem;
+				margin: 0 auto;
+			}
+
+			.services__header {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+				margin-bottom: 6rem;
+			}
+
+			.services__text {
+				max-width: 54.9rem;
+				text-align: center;
+			}
+
+			.services__grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				column-gap: 2rem;
+				row-gap: 2rem;
+			}
+
+			.services__card {
+				height: 48rem;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				background-color: #E0E0E0;
+				border-radius: 3rem;
+				padding: 3rem;
+				overflow: hidden;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				
+			}
+
+			.services__button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				padding: 1.1rem 1.8rem;
+				background-color: #fff;
+				color: #F94103;
+				border-radius: 2.5rem;
+				text-decoration: none;
+				font-family: 'Inter', sans-serif;
+				font-weight: 500;
+				font-size: 1.4rem;
+				line-height: 1.28;
+				transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+			}
+
+			.services__button:hover {
+				background-color: #F94103;
+				color: #fff;
+			}
+
+			.services__button:active {
+				transform: scale(0.98);
+			}
+
+			.services__card-content {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;	
+				margin-top: auto; 
+			}
+
+			.services__icon {
+				width: 2rem;
+			}
+
+			.services__card-title {
+				color: #fff;
+				margin-top: 2rem;
+			}
+
+			.services__card-text {
+				color: #fff;
+				margin-top: 1.2rem;
+			}
+
+			.services__card--large {
+				grid-column: span 2;
+				background-image:
+				linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.6) 67%, rgba(0, 0, 0, 0.8) 100%),
+				url('/img_pdr.webp');
+			}
+
+			.services__card--lights {
+				background-image:
+				linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.6) 67%, rgba(0, 0, 0, 0.8) 100%),
+				url('/img_light.webp');
+
+			}
+
+			.services__card--polish {
+				background-image:
+				linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.6) 67%, rgba(0, 0, 0, 0.8) 100%),
+				url('/img_polish.webp');
+
+			}
+
+			.services__card--clean {
+				background-image:
+				linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.6) 67%, rgba(0, 0, 0, 0.8) 100%),
+				url('/img_clean.webp');
+			}
+
+			.services__card--armor {
+				background-image:
+				linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.6) 67%, rgba(0, 0, 0, 0.8) 100%),
+				url('/img_armor.webp');
+			}
+
+			.services__card--sound {
+				background-image:
+				linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.6) 67%, rgba(0, 0, 0, 0.8) 100%),
+				url('/img_sound.webp');
+			}
+
+			.services__card--tint {
+				background-image:
+				linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.6) 67%, rgba(0, 0, 0, 0.8) 100%),
+				url('/img_tint.webp');
+			}
+
+		</style>
