@@ -7,13 +7,17 @@
 
 			<div class="container">
 
-				<h2 class="reviews__title">
-					Отзывы клиентов
-				</h2>
+				<div class="reviews__header">
 
-				<p class="reviews__text">
-					Реальные впечатления клиентов о нашей работе и результате.
-				</p>
+					<h2 class="reviews__title">
+					Отзывы клиентов
+					</h2>
+
+					<p class="reviews__text">
+						Реальные впечатления клиентов о нашей работе и результате.
+					</p>
+
+				</div>
 				
 				<!-- Карточки отзывов -->
 				 <ul class="reviews__grid">
@@ -140,3 +144,91 @@
 			</div>
 		
 		</section>
+
+		<style>
+			
+			.reviews {
+				margin-bottom: 12rem;
+				scroll-margin-top: 10rem;
+			}
+
+			.container {
+				max-width: 124rem;
+				width: 100%;
+				padding: 0 2rem;
+				margin: 0 auto;
+			}
+
+			.reviews__header {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+				margin-bottom: 6rem;
+				text-align: center;
+			}
+
+			.reviews__grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				column-gap: 2rem;
+				row-gap: 2rem;
+			}
+
+			.reviews__card {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				padding: 3rem;
+				gap: 3rem;
+				background-color: #E0E0E0;
+				border-radius: 3rem;
+			}
+
+			.reviews__card-header {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+			}
+
+			.reviews__icon {
+				width: 5.2rem;
+				height: 5.2rem;
+			}
+
+			.reviews__card-info {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 0.5rem;
+				
+			}
+
+			.reviews__card-meta {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 400;
+				font-size: 1.8rem;
+				line-height: 1.16;
+				letter-spacing: -0.05rem;
+				color: #000;
+			}
+
+			.reviews__card-text {
+				line-height: 1.21;
+			}
+
+			.reviews__card-stars {
+				font-size: 2rem;
+				line-height: 1;
+				color: #FBB41A;
+			}
+
+
+
+
+
+
+		</style>
