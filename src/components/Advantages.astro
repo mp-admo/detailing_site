@@ -3,9 +3,9 @@
 ---
 
 <!-- Особенности -->
-		 <section class="features">
+		 <section id="features" class="features">
 			
-			<div class="container">
+			<div class="features__container">
 
 				<ul class="features__list">
 
@@ -69,7 +69,7 @@
 		<!-- Преимущества -->
 		 <section id="advantages" class="advantages">
 
-			<div class="container">
+			<div class="advantages__container">
 
 				<h2 class="advantages__title">
 					<span>Почему нам</span>
@@ -199,3 +199,130 @@
 			</div>
 
 		 </section>
+
+		 <style>
+
+			.features {
+				margin: 10rem 0 12rem 0;
+			}
+
+			.features__container {
+				max-width: 124rem;
+				width: 100%;
+				padding: 0 2rem;
+				margin: 0 auto;
+			}
+
+			.features__list {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.features__item {
+				display: flex;
+				align-items: center;
+			}
+
+			.features__icon {
+				width: 6.2rem;
+				height: 6.2rem;
+			}
+
+			.features__info {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				height: 8rem;
+				gap: 0.9rem;
+				border-left: 0.2rem solid #E0E0E0;
+				padding-left: 2rem;
+				margin-left: 2rem;
+			}
+
+			.features__text {
+				max-width: 28.5rem;
+				line-height: 1.21;
+			}
+
+
+			.advantages {
+				margin-bottom: 9rem;
+			}
+		
+			.advantages__container {
+				max-width: 124rem;
+				width: 100%;
+				padding: 0 2rem;
+				margin: 0 auto;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				column-gap: 2rem;
+				row-gap: 2rem;
+			}
+
+			.advantages__grid {
+				display: contents;
+			}
+
+			.advantages__title span {
+				display: block;
+			}
+
+			.advantages__title span:first-child {
+				color: #000;
+			}
+
+			.advantages__title span:last-child {
+				color: #828282;
+			}
+
+			.advantages__card {
+				background-color: #E0E0E0;
+				border-radius: 3rem;
+				padding: 3rem;
+			}
+
+			.advantages__card-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+			}
+
+			.advantages__icon {
+				width: 2rem;
+			}
+
+			.advantages__number {
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 500;
+				font-size: 6.4rem;
+				line-height: 1;
+				color: #fff;
+				margin-top: -1rem;
+			}
+
+			.advantages__card-title {
+				margin-bottom: 1rem;
+				line-height: 1.2;
+			}
+
+			.advantages__card-text {
+				font-size: 1.6rem;
+				line-height: 1.18;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 </style>
