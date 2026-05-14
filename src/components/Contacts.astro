@@ -7,6 +7,8 @@
 
 			<div class="container">
 
+				<div class="contacts__header">
+
 				<h2 class="contacts__title">
 					Бесплатная консультация
 				</h2>
@@ -14,6 +16,8 @@
 				<p class="contacts__text">
 					Подберём оптимальное решение под ваш автомобиль, подробно расскажем о работах и сориентируем по стоимости. Оставьте заявку — свяжемся с вами в ближайшее время и ответим на все вопросы.
 				</p>
+
+				</div>
 
 				<div class="contacts__content">
 
@@ -54,7 +58,8 @@
 							</span>
 
 							<p class="contacts__value">
-								Новороссийск, Наб. Адмирала Серебрякова, 79Г
+								Новороссийск, <br />
+								Наб. Адмирала Серебрякова, 79Г
 							</p>
 
 						</div>
@@ -69,7 +74,7 @@
 								Telegram:
 							    </span>
 								
-								<a href="#" class="contacts__value">
+								<a href="#" class="contacts__value contacts__value--accent">
 								@Nova_Detail_NVR
 							    </a>
 
@@ -82,7 +87,7 @@
 								Email:
 							    </span>
 								
-								<a href="#" class="contacts__value">
+								<a href="#" class="contacts__value contacts__value--accent">
 								novadetail@yandex.ru
 							    </a>
 
@@ -128,12 +133,11 @@
 								Сообщение
 							</label>
 
-							<textarea
-							  id="message"
-							  name="message"
-							  placeholder="опишите задачу или услугу"
-							  class="contacts__textarea">
-						    </textarea>
+							<textarea 
+								id="message"
+								name="message"
+								placeholder="опишите задачу или услугу"
+								class="contacts__textarea"></textarea>
 
 						 </div>
 
@@ -160,3 +164,188 @@
 			</div>
 		
 		</section>
+
+		<style>
+
+			.contacts {
+				margin-bottom: 12rem;
+				scroll-margin-top: 10rem;
+			}
+
+			.container {
+				max-width: 124rem;
+				width: 100%;
+				padding: 0 2rem;
+				margin: 0 auto;
+			}
+
+			.contacts__header {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+				margin-bottom: 6rem;
+			}
+
+			.contacts__text {
+				max-width: 74.5rem;
+				text-align: center;
+			}
+
+			.contacts__content {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				column-gap: 2rem;
+				margin-bottom: 8rem;
+			}
+
+			.contacts__info {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 4rem;
+			}
+
+			.contacts__item {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 1rem;
+			}
+
+			.contacts__label {
+				font-family: 'Roboto', sans-serif;
+				font-weight: 400;
+				font-size: 2rem;
+				line-height: 1.15;
+				letter-spacing: -0.05rem;
+			}
+
+			.contacts__value {
+				font-family: 'Roboto', sans-serif;
+				font-weight: 500;
+				font-size: 2.4rem;
+				line-height: 1.21;
+				letter-spacing: -0.05rem;
+				color: #000;
+				text-decoration: none;
+			}
+
+
+			.contacts__value--accent:hover {
+				color: #F94103;
+			}
+
+			.contacts__socials {
+				display: flex;
+				align-items: flex-start;
+				gap: 6rem;
+			}
+
+			.contacts__form-row {
+				display: flex;
+				align-items: flex-start;
+				gap: 2rem;
+				margin-bottom: 3rem;
+			}
+
+			.contacts__form-item {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 1.2rem;
+			}
+
+			.contacts__form-row .contacts__form-item{
+				flex: 1;
+			}
+
+			.contacts__input{
+				background-color: #E0E0E0;
+				border-radius: 3rem;
+				border: none;
+				padding: 1.6rem 2.4rem;
+				width: 100%;
+				font-size: 1.6rem;
+				line-height: 1.5;
+			}
+
+			.contacts__textarea{
+				height: 15.8rem;
+				background-color: #E0E0E0;
+				border-radius: 3rem;
+				border: none;
+				padding: 1.6rem 2.4rem;
+				width: 100%;
+				font-size: 1.6rem;
+				line-height: 1.5;
+				margin-bottom: 3rem;
+				resize: none;
+			}
+
+			.contacts__input:focus {
+				outline: 2px solid #F94103;
+			}
+
+			.contacts__textarea:focus {
+				outline: 2px solid #F94103;
+			}
+
+			.contacts__form-label{
+				font-size: 1.6rem;
+				font-weight: 500;
+				line-height: 1.5;
+				color: #000;
+			}
+
+			.contacts__button{
+				background-color: #fff;
+				border: 1px solid #F94103;
+				color: #F94103;
+				border-radius: 2.5rem;
+				padding: 1.4rem 7.9rem ;
+				cursor: pointer;
+				transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+			}
+
+			.contacts__button:hover{
+				background-color: #F94103;
+				color: #fff;
+			}
+
+			.contacts__button:active {
+				transform: scale(0.98);
+			}
+
+			.contacts__map {
+				width: 100%;
+				height: 44rem;
+			}
+
+			.contacts__map-image{
+				width: 100%;
+    			height: 100%;
+				border-radius: 3rem;
+    			object-fit: cover;
+			}
+
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</style>
