@@ -7,15 +7,19 @@
 
 			<div class="container">
 
-				<h2 class="gallery__title">
-					Наши работы
-				</h2>
+				<div class="gallery__header">
 
-				<p class="gallery__text">
-					Показываем результат работы: от устранения дефектов до полного восстановления внешнего вида.
-				</p>
+					<h2 class="gallery__title">
+						Наши работы
+					</h2>
 
-				<!-- Табы -->
+					<p class="gallery__text">
+						Показываем результат работы: от устранения дефектов до полного восстановления внешнего вида.
+					</p>
+
+				</div>
+
+				<!-- Временно скрыли табы, пока у заказчика нет фото по категориям				
 				 <ul class="gallery__tabs">
 
 					<li class="gallery__tabs-item">
@@ -66,7 +70,8 @@
 
 					</li>
 
-				 </ul>
+				 </ul> -->
+
 
 				<!-- Фото -->
 				 <ul class="gallery__grid">
@@ -156,3 +161,83 @@
 			</div>
 		
 		</section>
+
+		<style>
+
+			.gallery {
+				scroll-margin-top: 10rem;
+				background-color: #1c1c1c;
+			}
+
+			.container {
+				max-width: 124rem;
+				width: 100%;
+				padding: 8rem 2rem;
+				margin: 0 auto;
+			}
+
+			.gallery__header {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+				margin-bottom: 6rem;
+				text-align: center;
+				
+			}
+
+			.gallery__title {
+				color: #fff;
+			}
+
+			.gallery__text {
+				max-width: 48rem;
+			}
+
+			/* .gallery__tabs {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 1.6rem;
+				margin-bottom: 6rem;
+			}
+
+			.gallery__tab {
+				background-color: transparent;
+				border: 1px solid #FFFFFF;
+				color: #fff;
+				border-radius: 2.5rem;
+				padding: 1.2rem 1.8rem;
+				cursor: pointer;
+				font-weight: 600;
+				line-height: 1.28;
+				letter-spacing: -0.03rem;
+			}
+
+			.gallery__tab--active {
+				background-color: #fff;
+				color: #000;
+			} */
+
+			.gallery__grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 2rem;
+			}
+
+			.gallery__image {
+				width: 100%;
+				aspect-ratio: 1 / 1;
+				object-fit: cover;
+				border-radius: 3rem;
+			}
+
+
+
+
+
+
+
+
+		</style>
+
