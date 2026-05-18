@@ -237,7 +237,6 @@
 				background-repeat: no-repeat;
 				background-size: cover;
 				background-position: center;
-				
 			}
 
 			.services__button {
@@ -331,5 +330,59 @@
 				linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.6) 67%, rgba(0, 0, 0, 0.8) 100%),
 				url('/img_tint.webp');
 			}
+
+			@media (max-width: 768px) {
+
+				.services {
+					margin-bottom: 6rem;
+				}
+
+
+				.container {
+					max-width: 100%;
+					width: 100%;
+					padding: 0 2rem; 
+				}
+
+				.services__header {
+					margin-bottom: 4rem;
+				}
+
+				.services__title {
+					font-size: 3.8rem;
+					text-align: center;
+				}
+
+				.services__text {
+					max-width: 32rem;
+				}
+
+				.services__grid {
+					grid-template-columns: 1fr;
+					row-gap: 1.4rem;
+				}
+
+				.services__card--large {
+					grid-column: auto;
+				}
+
+				.services__card {
+					height: 40rem;
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					background-color: #E0E0E0;
+					border-radius: 2.4rem;
+					padding: 2.4rem;
+					overflow: hidden;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center;
+				}
+
+				
+			}
+
+
 
 		</style>
