@@ -49,6 +49,10 @@
 				background-color: #E0E0E0;
 				border-radius: 0 0 6rem 6rem;
 				overflow: hidden;
+				background-image: url('/hero_logo_nova.svg'), url('/hero_car.webp');
+				background-repeat: no-repeat, no-repeat;
+				background-size: 120rem, 94.5rem;
+				background-position: center bottom -5.8rem, center bottom 2rem;
 				
 			}
 
@@ -59,10 +63,6 @@
 				display: flex;
 				align-items: flex-start;
 				padding: 0 2rem;
-				background-image: url('/hero_logo_nova.svg'), url('/hero_car.webp');
-				background-repeat: no-repeat, no-repeat;
-				background-size: 120rem, 94.5rem;
-				background-position: center bottom -5.8rem, center bottom 2rem;
 			}
 
 			.hero__content {
@@ -99,7 +99,7 @@
 				display: inline-flex;
 				align-items: center;
 				justify-content: center;
-				padding: 1.4rem 2.1rem;
+				padding: 1.4rem 2rem;
 				background-color: #fff;
 				border: 1px solid #F94103;
 				border-radius: 2.5rem;
@@ -140,4 +140,46 @@
 				color: #000;
 			}
 			
+
+			@media (max-width: 768px) {
+
+				.hero {
+				width: 100%;
+				height: auto;
+				min-height: calc(100vh - 56px);
+				position: relative;
+				background-color: #E0E0E0;
+				border-radius: 0 0 3rem 3rem;
+				overflow: hidden;
+				background-size: calc(100% - 4rem), 100%;
+				background-position: center bottom -1.79rem, center bottom;
+				}
+
+				.container {
+					max-width: 100%;
+					width: 100%;
+					padding: 0 2rem;
+					padding-top: 5rem;
+					
+				}
+
+				.hero__content {
+				max-width: 100%;
+				margin-top: 0;
+				}
+
+				.hero__title {
+				font-size: 4rem;
+				margin-bottom: 1.4rem;
+				}
+				
+
+
+
+
+				
+
+
+			}
+
 		</style>
