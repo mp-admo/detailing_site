@@ -232,6 +232,40 @@
 				border-radius: 3rem;
 			}
 
+			@media (max-width: 768px) {
+
+				.container {
+					max-width: 100%;
+					width: 100%;
+					padding: 6rem 2rem;
+				}
+
+				.gallery__header {
+					margin-bottom: 4rem;
+					gap: 1.4rem;
+				}
+
+				.gallery__title {
+					font-size: 3.8rem;
+					text-align: center;
+				}
+
+				.gallery__grid {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					gap: 1.4rem;
+				}
+
+				.gallery__image {
+					width: 100%;
+					aspect-ratio: 4 / 3;
+					object-fit: cover;
+					border-radius: 2rem;
+				}
+
+
+			}
+
 
 
 
