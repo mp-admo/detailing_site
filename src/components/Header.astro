@@ -101,9 +101,9 @@
 
 			</ul>
 
-			<div class="mobile-menu__contacts">
+			<div class="mobile-menu__info">
 
-				<a href="https://t.me/Nova_Detail" class="mobile-menu__social">
+				<a href="https://t.me/Nova_Detail" class="mobile-menu__value mobile-menu__value--accent">
 					@Nova_Detail
 				</a>
 
@@ -116,11 +116,11 @@
 						Наб. Адмирала Серебрякова, 79Г
 				</p>
 
-				<a href="tel:+79184641250" class="mobile-menu__phone">
-					+7 (918) 464-12-50
-				</a>
-
 			</div>
+
+			<a href="tel:+79184641250" class="mobile-menu__phone">
+					+7 (918) 464-12-50
+			</a>
 
 		</div>
 
@@ -237,6 +237,97 @@
 			.burger-button {
 				display: none;
 			}
+
+			/* Стилизация шторки */
+			.mobile-menu {
+				position: fixed;
+				top: 5.6rem;
+				left: 0;
+				width: 100%;
+				height: calc(100vh - 5.6rem);
+				background-color: #E0E0E0;
+				z-index: 200;
+				padding: 6rem 2rem 6rem 2rem;
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 0.3s ease, visibility 0.3s ease;
+			}
+
+			.mobile-menu__list {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 1.8rem;
+				margin-bottom: 6rem;
+			}
+
+			.mobile-menu__list a {
+				text-decoration: none;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 400;
+				font-size: 1.8rem;
+				line-height: 1.16;
+				letter-spacing: -0.05rem;
+				color: #000;
+			}
+
+			.mobile-menu__info {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 1.6rem;
+				margin-bottom: 6rem;
+			}
+
+			.mobile-menu__value {
+				text-decoration: none;
+				font-weight: 500;
+				font-size: 1.6rem;
+				line-height: 1.18;
+				color: #000;
+			}
+
+			.mobile-menu__value--accent {
+				color: #F94103;
+			}
+
+			.mobile-menu__phone {
+				display: inline-flex;
+				align-items: center;
+				align-self: flex-start;
+				justify-content: center;
+				padding: 1.4rem 4.6rem;
+				background-color: #F94103;
+				border-radius: 2.5rem;
+				text-decoration: none;
+				font-family: 'inter', sans-serif;
+				font-weight: 500;
+				font-size: 1.4rem;
+				line-height: 1.28;
+				letter-spacing: -0.03rem;
+				color: #fff;
+				transition: transform 0.2s ease;
+			}
+
+			.mobile-menu__phone:active {
+				transform: scale(0.98);
+			}
+
+			.mobile-menu.is-open {
+				opacity: 1;
+				visibility: visible;
+			}
+
+
+
+
+
+			
+
+
 
 
 			@media (max-width: 768px) {
