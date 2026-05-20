@@ -45,7 +45,7 @@
 
 							<div class="footer__contacts--list">
 
-								<a href="tel:+79184641250" class="footer__value footer__value--accent">
+								<a href="tel:+79184641250" class="footer__value footer__value--accent footer__value--phone">
 									+7 (918) 464-12-50
 								</a>
 
@@ -326,6 +326,76 @@
 				line-height: 1.8;
 				letter-spacing: -0.05rem;
 				color: #000;
+			}
+
+			@media (max-width: 768px) {
+
+				.container {
+					max-width: 100%;
+					width: 100%;
+					padding: 0 2rem;
+				}
+
+				.footer__top {
+					padding: 4rem 0 4rem;
+				}
+
+				.footer__grid {
+					grid-template-columns: 1fr;
+					row-gap: 6rem;
+				}	
+
+				.footer__info,
+				.footer__contacts,
+				.footer__services {
+					grid-column: auto; 
+				}
+
+				.footer__title {
+					margin-bottom: 2.4rem;
+				}
+
+				.footer__text {
+					font-size: 1.4rem;
+					line-height: 1.43;
+					max-width: auto;
+					margin-bottom: 5rem;
+				}
+
+				.footer__contacts--list {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 2rem;
+				}
+
+				.footer__value--accent.footer__value--phone { 
+					color: #F94103;
+				}
+
+				.footer__bottom .container {
+					flex-direction: column;   
+					align-items: center;      
+					text-align: center;       
+					gap: 0.4rem;  
+				}
+
+				.footer__copyright {	
+					font-size: 1.4rem;
+					line-height: auto;
+					letter-spacing: -0.05rem;
+				}
+
+				.footer__developer-icon {
+					height: 2.1rem;
+				}
+
+				.footer__developer-text {
+					font-size: 1.4rem;
+					line-height: auto;
+					letter-spacing: -0.05rem;
+				}
+
 			}
 
 		</style>
