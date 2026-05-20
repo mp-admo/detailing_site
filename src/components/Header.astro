@@ -389,3 +389,32 @@
 
 
 		</style>
+
+		<script>
+			const burgerBtn = document.querySelector('.burger-button');
+			const mobileMenu = document.querySelector('.mobile-menu');
+			const menuLinks = document.querySelectorAll('.mobile-menu__list a');
+
+			if (burgerBtn && mobileMenu) {
+				burgerBtn.addEventListener('click', () => {
+					mobileMenu.classList.toggle('is-open');
+					burgerBtn.classList.toggle('burger-button--active');
+					
+					if (mobileMenu.classList.contains('is-open')) {
+						document.body.style.overflow = 'hidden';
+					} else {
+						document.body.style.overflow = '';
+					}
+				});
+			}
+
+			if (menuLinks && mobileMenu && burgerBtn) {
+				menuLinks.forEach(link => {
+					link.addEventListener('click', () => {
+						mobileMenu.classList.remove('is-open');
+						burgerBtn.classList.remove('burger-button--active');
+						document.body.style.overflow = '';
+					});
+				});
+			}
+		</script>
