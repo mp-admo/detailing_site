@@ -1,87 +1,81 @@
----
+	---
 
----
+	---
 
-<header class="header">
-		
-		<nav class="header__nav">
+	<header class="header">
+			
+			<nav class="header__nav">
 
-  			<!-- Левая часть хедера -->
-			<div class="header__left">
+				<!-- Левая часть хедера -->
+				<div class="header__left">
 
-				<!--Логотип-->
-				<a href="#" class="header__logo">
-					<img
-					src="/logo_01_nova.svg"
-					alt="Логотип Nova Detail"
-					class="header__logo-image"
-					/>
-				</a>
+					<!--Логотип-->
+					<a href="#" class="header__logo">
+						<img
+						src="/logo_01_nova.svg"
+						alt="Логотип Nova Detail"
+						class="header__logo-image"
+						/>
+					</a>
 
-            	<!--Навигация-->
-				<ul class="header__list">
-					<li>
-						<a href="#features">Преимущества</a>
-					</li>
+					<!--Навигация-->
+					<ul class="header__list">
+						<li>
+							<a href="#features">Преимущества</a>
+						</li>
 
-					<li>
-						<a href="#services">Услуги</a>
-					</li>
+						<li>
+							<a href="#services">Услуги</a>
+						</li>
 
-					<li>
-						<a href="#contacts">Контакты</a>
-					</li>
+						<li>
+							<a href="#contacts">Контакты</a>
+						</li>
 
-					<li>
-						<a href="#reviews">Отзывы</a>
-					</li>
+						<li>
+							<a href="#reviews">Отзывы</a>
+						</li>
 
-					<li>
-						<a href="#gallery">Наши Работы</a>
-					</li>
+						<li>
+							<a href="#gallery">Наши Работы</a>
+						</li>
 
-				</ul>
+					</ul>
 
-			</div>
-
-			<!-- Правая часть хедера -->
-			<div class="header__right">
-		
-            	<!-- Адрес -->
-				<div class="header__address">
-					<img src="/pin.svg" alt="" class="header__address-icon"/>
-
-					<span class="header__address-text">
-						г.Новороссийск
-					</span>
 				</div>
 
-		    	<!-- Телефон -->
-				<a href="tel:+79184641250" class="phone__button">
-					+7 (918) 464-12-50
-				</a>
+				<!-- Правая часть хедера -->
+				<div class="header__right">
+			
+					<!-- Адрес -->
+					<div class="header__address">
+						<img src="/pin.svg" alt="" class="header__address-icon"/>
 
-			</div>
+						<span class="header__address-text">
+							г.Новороссийск
+						</span>
+					</div>
 
-			<button class="burger-button">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-	
-		</nav>
+					<!-- Телефон -->
+					<a href="tel:+79184641250" class="phone__button">
+						+7 (918) 464-12-50
+					</a>
 
-	</header>
+				</div>
 
-	<div class="mobile-menu">
+				<button class="burger-button">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+		
+			</nav>
 
-		<div class="momobile-menu__overlay"> </div>
+		</header>
 
-		<div class="mobile-menu__panel">
 
-			<button class="mobile-menu__close">
-				&times;
-			</button>
+		<!-- Шторка -->
+		<div class="mobile-menu">
 
 			<ul class="mobile-menu__list">
 
@@ -130,171 +124,184 @@
 
 		</div>
 
-	</div>
 
-	<!-- Стиль -->
-	<style>
-
-		.header {
-			background-color: #E0E0E0;
-			height: 7.6rem;
-			display: flex;
-			align-items: center;
-			position: sticky;
-			top: 0;
-			z-index: 100;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-		}
-
-		.header__nav {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			width: 100%;
-			max-width: 124rem;
-			padding: 0 2rem;
-			margin: 0 auto;
-			height: 100%;
-		}
-
-		.header__list {
-			display: flex;
-			gap: 3rem;
-			list-style: none;
-		}
-
-		.header__list a {
-			text-decoration: none;
-			font-family: 'Roboto', sans-serif;
-			font-weight: 400;
-			font-size: 1.4rem;
-			line-height: 1.43;
-			color: #000;
-			margin: 0;
-		}
-
-		.header__list a:hover {
-			color: #F94103;
-		}
-
-		.header__address {
-			display: flex;
-			align-items: center;
-			gap: 0.7rem;
-		}
-
-		.header__address-icon {
-			width: 1.1rem;
-			height: 1.4rem;
-		}
-
-		.header__address-text {
-			text-decoration: none;
-			font-family: 'Roboto', sans-serif;
-			font-weight: 500;
-			font-size: 1.4rem;
-			line-height: 1.43;
-			color: #F94103;
-		}
-		
-		.header__logo-image {
-			width: 5.5rem;
-			height: 3.8rem;
-		}
-
-		.header__left {
-			display: flex;
-			gap: 6rem;
-			align-items: center;
-		}
-
-		.header__right {
-			display: flex;
-			gap: 3rem;
-			align-items: center;
-		}
-
-		.phone__button {
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			padding: 1.4rem 2.1rem;
-			background-color: #fff;
-			border: 1px solid #F94103;
-			border-radius: 2.5rem;
-			text-decoration: none;
-			font-family: 'inter', sans-serif;
-			font-weight: 500;
-			font-size: 1.4rem;
-			line-height: 1.28;
-			letter-spacing: -0.03rem;
-			color: #F94103;
-			transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-		}
-
-		.phone__button:hover {
-			background-color: #F94103;
-			color: #fff;
-		}
-
-		.phone__button:active {
-			transform: scale(0.98);
-		}
-
-		.burger-button {
-			display: none;
-		}
-
-		.mobile-menu {
-			
-		}
-
-
-
-		@media (max-width: 768px) {
-
-			.burger-button {
-				display: flex;
-			}
-
-			.header__list,
-			.header__right {
-				display: none;
-			}
+		<!-- Стиль -->
+		<style>
 
 			.header {
-				height: 5.6rem;
+				background-color: #E0E0E0;
+				height: 7.6rem;
+				display: flex;
+				align-items: center;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 			}
 
 			.header__nav {
-				padding: 0 2rem;
-			}
-
-			.burger-button {
 				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				gap: 0.4rem;
-				background: transparent;
-				border: none;
-				cursor: pointer;
-				padding: 0;
+				justify-content: space-between;
+				align-items: center;
+				width: 100%;
+				max-width: 124rem;
+				padding: 0 2rem;
+				margin: 0 auto;
+				height: 100%;
 			}
 
-			.burger-button span {
-				display: block;
-				width: 2rem;
-				height: 0.26rem;
-				background-color: #F94103;
-				border-radius: 1rem;
+			.header__list {
+				display: flex;
+				gap: 3rem;
+				list-style: none;
+			}
+
+			.header__list a {
+				text-decoration: none;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 400;
+				font-size: 1.4rem;
+				line-height: 1.43;
+				color: #000;
+				margin: 0;
+			}
+
+			.header__list a:hover {
+				color: #F94103;
+			}
+
+			.header__address {
+				display: flex;
+				align-items: center;
+				gap: 0.7rem;
+			}
+
+			.header__address-icon {
+				width: 1.1rem;
+				height: 1.4rem;
+			}
+
+			.header__address-text {
+				text-decoration: none;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 500;
+				font-size: 1.4rem;
+				line-height: 1.43;
+				color: #F94103;
+			}
+			
+			.header__logo-image {
+				width: 5.5rem;
+				height: 3.8rem;
 			}
 
 			.header__left {
-				gap: 0;
+				display: flex;
+				gap: 6rem;
+				align-items: center;
 			}
-		}
+
+			.header__right {
+				display: flex;
+				gap: 3rem;
+				align-items: center;
+			}
+
+			.phone__button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				padding: 1.4rem 2.1rem;
+				background-color: #fff;
+				border: 1px solid #F94103;
+				border-radius: 2.5rem;
+				text-decoration: none;
+				font-family: 'inter', sans-serif;
+				font-weight: 500;
+				font-size: 1.4rem;
+				line-height: 1.28;
+				letter-spacing: -0.03rem;
+				color: #F94103;
+				transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+			}
+
+			.phone__button:hover {
+				background-color: #F94103;
+				color: #fff;
+			}
+
+			.phone__button:active {
+				transform: scale(0.98);
+			}
+
+			.burger-button {
+				display: none;
+			}
 
 
+			@media (max-width: 768px) {
+
+				.burger-button {
+					display: flex;
+				}
+
+				.header__list,
+				.header__right {
+					display: none;
+				}
+
+				.header {
+					height: 5.6rem;
+				}
+
+				.header__nav {
+					padding: 0 2rem;
+				}
+
+				.burger-button {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					gap: 0.4rem;
+					background: transparent;
+					border: none;
+					cursor: pointer;
+					padding: 0;
+					position: absolute;
+					top: 50%;
+					right: 2rem;
+					transform: translateY(-50%); 
+					z-index: 250; 
+					height: 2rem;
+					width: 2rem;
+				}
+
+				.burger-button span {
+					display: block;
+					width: 2rem;
+					height: 0.26rem;
+					background-color: #F94103;
+					border-radius: 1rem;
+					transition: transform 0.3s ease, opacity 0.3s ease;
+				}
+
+				.burger-button--active span:nth-child(1) {
+					transform: translateY(0.66rem) rotate(45deg);
+				}
+
+				.burger-button--active span:nth-child(2) {
+					opacity: 0;
+				}
+
+				.burger-button--active span:nth-child(3) {
+					transform: translateY(-0.66rem) rotate(-45deg);
+				}
+
+				.header__left {
+					gap: 0;
+				}
+			}
 
 
-	</style>
+		</style>
+		
