@@ -1,5 +1,33 @@
 ---
+import { Image, getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
+// Все фото из src/assets/gallery. Порядок в ленте — по имени файла (01.jpg, 02.jpg, …)
+const files = import.meta.glob<{ default: ImageMetadata }>(
+	"../assets/gallery/*.{jpg,jpeg,png,webp}",
+	{ eager: true }
+);
+
+// Размер фото в просмотрщике: все приводятся к 3:4 обрезкой (без сплющивания)
+const FULL_WIDTH = 1500;
+const FULL_HEIGHT = 2000;
+
+const photos = await Promise.all(
+	Object.keys(files)
+		.sort()
+		.map(async (path) => {
+			const src = files[path].default;
+			const full = await getImage({
+				src,
+				width: FULL_WIDTH,
+				height: FULL_HEIGHT,
+				fit: "cover",
+				format: "webp",
+				quality: 80,
+			});
+			return { src, full: full.src };
+		})
+);
 ---
 
 <!-- Фотогалерия -->
@@ -19,7 +47,7 @@
 
 				</div>
 
-				<!-- Временно скрыли табы, пока у заказчика нет фото по категориям				
+				<!-- Временно скрыли табы, пока у заказчика нет фото по категориям
 				 <ul class="gallery__tabs">
 
 					<li class="gallery__tabs-item">
@@ -73,109 +101,68 @@
 				 </ul> -->
 
 
-				<!-- Фото -->
-				 <ul class="gallery__grid">
+				<!-- Лента фото: 2 строки, листается по горизонтали -->
+				<ul class="gallery__track">
 
-					<li class="gallery__item">
+					{photos.map((photo, index) => (
+						<li class="gallery__item">
 
-						<img
-						  src="/gallery/photo_for_gallery_01.jpg"
-						  alt="Результат работы детейлинг студии Нова"
-						  class="gallery__image"
-						  loading="lazy"
-						  decoding="async"
-						/>
+							<!-- Ссылка на большую версию: по клику открывается просмотрщик -->
+							<a
+								href={photo.full}
+								class="gallery__link"
+								data-pswp-width={FULL_WIDTH}
+								data-pswp-height={FULL_HEIGHT}
+								data-cropped="true"
+								target="_blank"
+								rel="noopener"
+							>
+								<Image
+									src={photo.src}
+									alt={`Работа детейлинг-студии Нова, фото ${index + 1}`}
+									width={600}
+									height={600}
+									fit="cover"
+									format="webp"
+									quality={80}
+									class="gallery__image"
+									loading="lazy"
+									decoding="async"
+								/>
+							</a>
 
-					</li>
+						</li>
+					))}
 
-					<li class="gallery__item">
+				</ul>
 
-						<img
-						  src="/gallery/photo_for_gallery_02.jpg"
-						  alt="Результат работы детейлинг студии Нова"
-						  class="gallery__image"
-						  loading="lazy"
-						  decoding="async"
-						/>
-						
-					</li>
+				<!-- Управление лентой: стрелки и полоса прокрутки -->
+				<div class="gallery__controls">
 
-					<li class="gallery__item">
+					<div class="gallery__progress">
+						<span class="gallery__progress-bar"></span>
+					</div>
 
-						<img
-						  src="/gallery/photo_for_gallery_03.jpg"
-						  alt="Результат работы детейлинг студии Нова"
-						  class="gallery__image"
-						  loading="lazy"
-						  decoding="async"
-						/>
-						
-					</li>
+					<div class="gallery__arrows">
 
-					<li class="gallery__item">
+						<button type="button" class="gallery__arrow gallery__arrow--prev" aria-label="Предыдущие фото">
+							<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+								<path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
 
-						<img
-						  src="/gallery/photo_for_gallery_04.jpg"
-						  alt="Результат работы детейлинг студии Нова"
-						  class="gallery__image"
-						  loading="lazy"
-						  decoding="async"
-						/>
-						
-					</li>
+						<button type="button" class="gallery__arrow gallery__arrow--next" aria-label="Следующие фото">
+							<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+								<path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
 
-					<li class="gallery__item">
+					</div>
 
-						<img
-						  src="/gallery/photo_for_gallery_05.jpg"
-						  alt="Результат работы детейлинг студии Нова"
-						  class="gallery__image"
-						  loading="lazy"
-						  decoding="async"
-						/>
-						
-					</li>
-
-					<li class="gallery__item">
-
-						<img
-						  src="/gallery/photo_for_gallery_06.jpg"
-						  alt="Результат работы детейлинг студии Нова"
-						  class="gallery__image"
-						  loading="lazy"
-						  decoding="async"
-						/>
-						
-					</li>
-
-					<li class="gallery__item">
-
-						<img
-						  src="/gallery/photo_for_gallery_07.jpg"
-						  alt="Результат работы детейлинг студии Нова"
-						  class="gallery__image"
-						  loading="lazy"
-						  decoding="async"
-						/>
-						
-					</li>
-
-					<li class="gallery__item">
-
-						<img
-						  src="/gallery/photo_for_gallery_08.jpg"
-						  alt="Результат работы детейлинг студии Нова"
-						  class="gallery__image"
-						  loading="lazy"
-						  decoding="async"
-						/>
-						
-					</li>
-
-				 </ul>
+				</div>
 
 			</div>
-		
+
 		</section>
 
 		<style>
@@ -199,7 +186,6 @@
 				gap: 1rem;
 				margin-bottom: 6rem;
 				text-align: center;
-				
 			}
 
 			.gallery__title {
@@ -235,17 +221,112 @@
 				color: #000;
 			} */
 
-			.gallery__grid {
+			/* Лента: 2 строки, столбцы идут вправо; на экране 4 столбца */
+			.gallery__track {
+				--gap: 2rem;
+				--columns: 4;
 				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: 2rem;
+				grid-template-rows: repeat(2, auto);
+				grid-auto-flow: column;
+				grid-auto-columns: calc((100% - (var(--columns) - 1) * var(--gap)) / var(--columns));
+				gap: var(--gap);
+				overflow-x: auto;
+				scroll-snap-type: x mandatory;
+				scroll-behavior: smooth;
+				overscroll-behavior-x: contain;
+				-webkit-overflow-scrolling: touch;
+				scrollbar-width: none;
+			}
+
+			.gallery__track::-webkit-scrollbar {
+				display: none;
+			}
+
+			.gallery__item {
+				scroll-snap-align: start;
+			}
+
+			.gallery__link {
+				display: block;
+				border-radius: 3rem;
+				overflow: hidden;
+				cursor: zoom-in;
+				outline: none;
+				-webkit-tap-highlight-color: transparent;
 			}
 
 			.gallery__image {
+				display: block;
 				width: 100%;
+				height: auto;
 				aspect-ratio: 1 / 1;
 				object-fit: cover;
 				border-radius: 3rem;
+				transition: transform 0.4s ease;
+			}
+
+			@media (hover: hover) {
+				.gallery__link:hover .gallery__image {
+					transform: scale(1.04);
+				}
+			}
+
+			.gallery__controls {
+				display: flex;
+				align-items: center;
+				gap: 3rem;
+				margin-top: 4rem;
+			}
+
+			.gallery__progress {
+				flex: 1;
+				height: 0.3rem;
+				border-radius: 1rem;
+				background-color: rgba(255, 255, 255, 0.2);
+				overflow: hidden;
+			}
+
+			.gallery__progress-bar {
+				display: block;
+				height: 100%;
+				width: 25%;
+				border-radius: 1rem;
+				background-color: #F94103;
+				transition: transform 0.15s linear;
+			}
+
+			.gallery__arrows {
+				display: flex;
+				gap: 1.2rem;
+			}
+
+			.gallery__arrow {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 5.2rem;
+				height: 5.2rem;
+				padding: 0;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				background-color: transparent;
+				color: #fff;
+				cursor: pointer;
+				transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+			}
+
+			.gallery__arrow:hover:not(:disabled) {
+				background-color: #F94103;
+				border-color: #F94103;
+			}
+
+			.gallery__arrow:active:not(:disabled) {
+				transform: scale(0.96);
+			}
+
+			.gallery__arrow:disabled {
+				opacity: 0.3;
+				cursor: default;
 			}
 
 			@media (max-width: 768px) {
@@ -266,28 +347,126 @@
 					text-align: center;
 				}
 
-				.gallery__grid {
-					display: grid;
-					grid-template-columns: repeat(2, 1fr);
-					gap: 1.4rem;
+				/* На телефоне ~2.3 столбца: видно край следующих фото */
+				.gallery__track {
+					--gap: 1.2rem;
+					--columns: 2.3;
 				}
 
+				.gallery__link,
 				.gallery__image {
-					width: 100%;
-					aspect-ratio: 4 / 3;
-					object-fit: cover;
 					border-radius: 2rem;
 				}
 
+				.gallery__controls {
+					margin-top: 2.4rem;
+				}
+
+				/* На телефоне листаем свайпом, стрелки не нужны */
+				.gallery__arrows {
+					display: none;
+				}
 
 			}
 
-
-
-
-
-
-
-
 		</style>
 
+		<!-- Оформление просмотрщика PhotoSwipe (он живёт вне секции, поэтому стили глобальные) -->
+		<style is:global>
+			.pswp {
+				--pswp-bg: #111;
+				--pswp-placeholder-bg: #1c1c1c;
+				--pswp-icon-color: #fff;
+				--pswp-icon-color-secondary: #111;
+				--pswp-icon-stroke-color: #111;
+			}
+
+			.pswp__counter {
+				font-family: 'Roboto', sans-serif;
+				font-size: 1.6rem;
+				opacity: 0.9;
+			}
+
+			.pswp__button:hover .pswp__icn,
+			.pswp__button:focus-visible .pswp__icn {
+				fill: #F94103;
+			}
+		</style>
+
+		<script>
+			import PhotoSwipeLightbox from "photoswipe/lightbox";
+			import "photoswipe/style.css";
+
+			// Какое фото нажали — чтобы заранее загрузить его большую версию
+			let clickedHref = "";
+			document.querySelector(".gallery__track")?.addEventListener(
+				"click",
+				(event) => {
+					const link = (event.target as HTMLElement).closest<HTMLAnchorElement>(".gallery__link");
+					if (link) clickedHref = link.href;
+				},
+				{ capture: true }
+			);
+
+			// Просмотрщик: свайп, стрелки, клавиатура, зум, счётчик
+			const lightbox = new PhotoSwipeLightbox({
+				gallery: ".gallery__track",
+				children: ".gallery__link",
+				pswpModule: () => import("photoswipe"),
+				bgOpacity: 1,
+				// Плавное появление вместо «зума» из квадратного превью
+				showHideAnimationType: "fade",
+				// Открываем только когда большое фото уже загружено — без подмены картинки на лету
+				openPromise: () => {
+					const img = new Image();
+					img.src = clickedHref;
+					return img.decode().catch(() => {});
+				},
+				// После закрытия не возвращать фокус на превью (иначе появляется рамка)
+				returnFocus: false,
+				wheelToZoom: true,
+				// На компьютере отступ, чтобы фото не заходило под панель; на телефоне — во весь экран
+				paddingFn: (viewport) =>
+					viewport.x > 768
+						? { top: 60, bottom: 40, left: 80, right: 80 }
+						: { top: 0, bottom: 0, left: 0, right: 0 },
+				closeTitle: "Закрыть",
+				zoomTitle: "Приблизить",
+				arrowPrevTitle: "Предыдущее фото",
+				arrowNextTitle: "Следующее фото",
+				errorMsg: "Не удалось загрузить фото",
+			});
+			// Не показывать растянутое квадратное превью вместо фото 3:4
+			lightbox.addFilter("placeholderSrc", () => false);
+			lightbox.init();
+
+			const track = document.querySelector<HTMLElement>(".gallery__track");
+			const prev = document.querySelector<HTMLButtonElement>(".gallery__arrow--prev");
+			const next = document.querySelector<HTMLButtonElement>(".gallery__arrow--next");
+			const bar = document.querySelector<HTMLElement>(".gallery__progress-bar");
+
+			if (track && prev && next && bar) {
+				// Шаг прокрутки — одна видимая «страница» ленты
+				const page = () => track.clientWidth;
+
+				const update = () => {
+					const max = track.scrollWidth - track.clientWidth;
+					const visible = track.clientWidth / track.scrollWidth;
+					const progress = max > 0 ? track.scrollLeft / max : 0;
+
+					// Длина полосы = доля видимой части, сдвиг — по прокрутке
+					bar.style.width = `${visible * 100}%`;
+					bar.style.transform = `translateX(${progress * (1 / visible - 1) * 100}%)`;
+
+					prev.disabled = track.scrollLeft <= 2;
+					next.disabled = track.scrollLeft >= max - 2;
+				};
+
+				prev.addEventListener("click", () => track.scrollBy({ left: -page() }));
+				next.addEventListener("click", () => track.scrollBy({ left: page() }));
+
+				track.addEventListener("scroll", update, { passive: true });
+				window.addEventListener("resize", update);
+				update();
+			}
+		</script>
